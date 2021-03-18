@@ -1,0 +1,339 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar">
+
+                            <div class="header-search d-flex align-items-center">
+
+                            </div>
+
+
+                            <div class="dashboard_log">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile_log dropdown">
+                                        <div class="user" data-toggle="dropdown">
+                                            <span class="thumb"><i class="mdi mdi-account"></i></span>
+                                            <span class="name">{{ app.user.email }}</span>
+                                            <span class="arrow"><i class="la la-angle-down"></i></span>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="{{ path('account') }}" class="dropdown-item">
+                                                <i class="mdi mdi-account"></i> Account
+                                            </a>
+                                            <a href="history.html" class="dropdown-item">
+                                                <i class="la la-book"></i> History
+                                            </a>
+                                            <a href="{{ path('setting') }}" class="dropdown-item">
+                                                <i class="la la-cog"></i> Setting
+                                            </a>
+                                            <a href="lock.html" class="dropdown-item">
+                                                <i class="la la-lock"></i> Lock
+                                            </a>
+                                            <a href="#" class="dropdown-item logout">
+                                                <i class="la la-sign-out"></i> Logout
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <a class="brand-logo" href="{{ path('user_page') }}">
+                <img src="/builder/images/logo.png" alt="">
+                <span>Treemium </span></a>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="{{ path('user_page') }}">
+                            <span><i class="mdi mdi-view-dashboard"></i></span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li><a href="{{ path('exchange') }}">
+                            <span><i class="mdi mdi-repeat"></i></span>
+                            <span class="nav-text">Exchange</span>
+                        </a>
+                    </li>
+                    <li><a href="{{ path('account') }}">
+                            <span><i class="mdi mdi-account"></i></span>
+                            <span class="nav-text">Account</span>
+                        </a>
+                    </li>
+                    <li><a href="{{ path('setting') }}">
+                            <span><i class="mdi mdi-settings"></i></span>
+                            <span class="nav-text">Setting</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="social">
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </div>
+                <div class="copy_right">
+                    © 2020 Quixlab
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page_title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="page_title-content">
+                            <p>Welcome Back,
+                                <span> {{ app.user.username }}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12" id="crypto">
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <div class="widget-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="widget-stat">
+                                            <div class="coin-title">
+                                                <span><i class="cc BTC-alt"></i></span>
+                                                <h5 class="d-inline-block ml-2 mb-3">Bitcoin
+                                                    <span>(24h)</span>
+                                                </h5>
+                                            </div>
+                                            <h4 >USD  <span id="btcPrice"></span> <span id="btcPrecent" class="badge  ml-3 mt-3 {% if crypto.0.price_change_percentage_24h <= 0  %} badge-danger {% elseif crypto.0.price_change_percentage_24h >= 0 %} badge-success {% endif %}">
+                                                    </span>
+                                            </h4>
+                                        </div>
+                                        <div id="btcChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4">
+                                <div class="widget-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="widget-stat">
+                                            <div class="coin-title">
+                                                <span><i class="cc ETH-alt"></i></span>
+                                                <h5 class="d-inline-block ml-2 mb-3">Ethereum
+                                                    <span>(24h)</span>
+                                                </h5>
+                                            </div>
+                                            <h4 id="crypto">USD  <span id="ethPrice"> </span><span id="ethPercent" class="badge   ml-2 mt-3 {% if crypto.1.price_change_percentage_24h <= 0  %} badge-danger {% elseif crypto.1.price_change_percentage_24h >= 0 %} badge-success {% endif %}">
+
+                                                    </span>
+                                            </h4>
+                                        </div>
+                                        <div id="ltcChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4">
+                                <div class="widget-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="widget-stat">
+                                            <div class="coin-title">
+                                                <span><i class="cc LTC-alt"></i></span>
+                                                <h5 class="d-inline-block ml-2 mb-3">Litecoin
+                                                    <span>(24h)</span>
+                                                </h5>
+                                            </div>
+                                            <h4>USD <span id="ltcPrice"></span> <span  id="ltcPercent" class="badge  ml-2 mt-3 {% if crypto.2.price_change_percentage_24h <= 0  %} badge-danger {% elseif crypto.2.price_change_percentage_24h >= 0 %} badge-success {% endif %}  mt-3">
+                                                   </span>
+                                            </h4>
+                                        </div>
+                                        <div id="xrpChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+
+                            <div class="col-xl-8 col-lg-12 col-xxl-8">
+                                <div class="card mt-lg-5" >
+                                    <div class="card-header">
+                                        Featured
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-xl-4 col-lg-12 col-xxl-4">
+                                <div class="card mt-lg-5" >
+                                    <div class="card-header">
+                                        Featured
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-xxl-12">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="row">
+
+                            <div class="col-xl-12 col-lg-12 col-xxl-8">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Transaction </h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="transaction-widget">
+                                            <ul class="list-unstyled">
+                                                <li class="media">
+                                                    <span class="sold-thumb"><i class="la la-arrow-down"></i></span>
+                                                    <div class="media-body">
+                                                        <p>
+                                                            <small>9 November, 2020</small>
+                                                            <small>15:33</small>
+                                                        </p>
+                                                        <p class="wallet-address text-dark">15f5s8s47bhj61r8w4e77e5e56
+                                                        </p>
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <h4>0.000242 BTC</h4>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/builder/vendor/jquery/jquery.min.js"></script>
+    <script src="/builder/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="/builder/vendor/toastr/toastr.min.js"></script>
+    <script src="/builder/vendor/toastr/toastr-init.js"></script>
+
+    <script src="/builder/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="/builder/vendor/circle-progress/circle-progress-init.js"></script>
+
+
+    <!--  flot-chart js -->
+    <script src="/builder/vendor/apexchart/apexcharts.min.js"></script>
+    <script src="/builder/vendor/apexchart/apexchart-init.js"></script>
+    <script src="/builder/vendor/apexchart/apexchart2-init.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    {{ encore_entry_script_tags('script') }}
+   <script>
+       /* Récupération des données de cours du Bitcoin */
+       function getCours() {
+           /* Appel AJAX vers cryptocompare.com */
+           var ajax=new XMLHttpRequest();
+           console.log("readyState après new : "+ajax.readyState);
+           /* Détection de l'avancement de l'appel */
+           ajax.onreadystatechange=function() {
+               console.log("readyState a changé et vaut : "+ajax.readyState)
+           }
+           /* Détection de la fin de l'appel */
+           ajax.onload = function() {
+
+               if (this.status === 200) { /* Le service a bien répondu */
+                   try {
+                       var json=JSON.parse(this.response); // Convertir le retour JSON
+                   } catch(err) {
+                       console.log("Retour JSON incorrect");
+                       return false;
+                   }
+                   /* Vérifier que le JSON de retour contient bien la propriété EUR */
+                   if (json) {
+
+                     document.getElementById("btcPrice").innerText= json[0].current_price;
+                     document.getElementById("ethPrice").innerText= json[1].current_price;
+                     document.getElementById("ltcPrice").innerText= json[2].current_price;
+
+                       document.getElementById("btcPrecent").innerText= json[0].price_change_percentage_24h+' '+'%';
+                       document.getElementById("ethPercent").innerText= json[1].price_change_percentage_24h+' '+'%';
+                       document.getElementById("ltcPercent").innerText= json[2].price_change_percentage_24h+' '+'%';
+
+
+                       console.log(json);
+                   } else {
+                       console.log("Retour du cours incorrect");
+                   }
+               }
+           }
+           /* Détection du timeout */
+           ajax.ontimeout=function() {
+               console.log("Le service n'a pas répondu à temps : nouvel essai dans 5 sec");
+               /* Relancer l'appel 5 secondes plus tard */
+               setTimeout("getCours()", 5000);
+           }
+
+           /* Préparation de la requête et envoi */
+           var url="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2Cethereum%2Clitecoin&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h";
+           ajax.open("GET", url, true);
+           ajax.timeout=1000; /* Délai d'expiration à 1 seconde */
+           ajax.send();
+       }
+
+
+
+
+
+
+
+       /* Démarrage de l'appel */
+       window.onload=function() {
+           getCours();
+           setInterval("getCours()", 30000);
+       }
+
+
+   </script>
+
+{% endblock %}
