@@ -43,4 +43,11 @@ class UserPageController extends AbstractController
             'controller_name' => 'UserPageController',
         ]);
     }
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logout()
+    {
+        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+    }
 }
