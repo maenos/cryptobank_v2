@@ -18,41 +18,33 @@
                     <div class="col-xl-12">
                         <nav class="navbar">
 
-                            <div class="header-search">
-                                <form action="#">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text" id="basic-addon2"><i
-                                                        class="fa fa-search"></i></span>
-                                        </div>
-                                    </div>
-                                </form>
+                            <div class="header-search d-flex align-items-center">
+
                             </div>
 
 
-                            <div class="dashboard_log my-2">
+                            <div class="dashboard_log">
                                 <div class="d-flex align-items-center">
                                     <div class="profile_log dropdown">
                                         <div class="user" data-toggle="dropdown">
                                             <span class="thumb"><i class="mdi mdi-account"></i></span>
-                                            <span class="name">Carla Pascle</span>
+                                            <span class="name">{{ app.user.email }}</span>
                                             <span class="arrow"><i class="la la-angle-down"></i></span>
                                         </div>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="accounts.html" class="dropdown-item">
+                                            <a href="{{ path('account') }}" class="dropdown-item">
                                                 <i class="mdi mdi-account"></i> Account
                                             </a>
                                             <a href="history.html" class="dropdown-item">
                                                 <i class="la la-book"></i> History
                                             </a>
-                                            <a href="settings.html" class="dropdown-item">
+                                            <a href="{{ path('setting') }}" class="dropdown-item">
                                                 <i class="la la-cog"></i> Setting
                                             </a>
                                             <a href="lock.html" class="dropdown-item">
                                                 <i class="la la-lock"></i> Lock
                                             </a>
-                                            <a href="signin.html" class="dropdown-item logout">
+                                            <a href="{{ path('logout') }}" class="dropdown-item logout">
                                                 <i class="la la-sign-out"></i> Logout
                                             </a>
                                         </div>
@@ -66,28 +58,28 @@
         </div>
 
         <div class="sidebar">
-            <a class="brand-logo" href="index.html">
-                <img src="images/logo.png" alt="">
+            <a class="brand-logo" href="{{ path('user_page') }}">
+                <img src="/builder/images/logo.png" alt="">
                 <span>Treemium </span></a>
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="index.html">
+                        <a href="{{ path('user_page') }}">
                             <span><i class="mdi mdi-view-dashboard"></i></span>
                             <span class="nav-text">Home</span>
                         </a>
                     </li>
-                    <li><a href="buy-sell.html">
+                    <li><a href="{{ path('exchange') }}">
                             <span><i class="mdi mdi-repeat"></i></span>
                             <span class="nav-text">Exchange</span>
                         </a>
                     </li>
-                    <li><a href="accounts.html">
+                    <li><a href="{{ path('account') }}">
                             <span><i class="mdi mdi-account"></i></span>
                             <span class="nav-text">Account</span>
                         </a>
                     </li>
-                    <li><a href="settings.html">
+                    <li><a href="{{ path('setting') }}">
                             <span><i class="mdi mdi-settings"></i></span>
                             <span class="nav-text">Setting</span>
                         </a>
@@ -115,7 +107,7 @@
                     <div class="col-xl-12">
                         <div class="page_title-content">
                             <p>Welcome Back,
-                                <span> Carla Pascle</span>
+                                <span> {{ app.user.username }}</span>
                             </p>
                         </div>
                     </div>

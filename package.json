@@ -1,6 +1,10 @@
 {
     "devDependencies": {
         "@symfony/webpack-encore": "^0.31.0",
+        "babel-core": "^6.26.3",
+        "babel-loader": "7",
+        "babel-preset-env": "^1.7.0",
+        "coinpayments": "^2.1.2",
         "core-js": "^3.0.0",
         "regenerator-runtime": "^0.13.2",
         "request": "^2.88.2",

@@ -105,7 +105,11 @@
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
       <path value="$PROJECT_DIR$/vendor/mercuryseries/flashy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/cryptapi/php-cryptapi" />
+      <path value="$PROJECT_DIR$/vendor/hexters/coinpayment" />
+      <path value="$PROJECT_DIR$/vendor/coinpaymentsnet/coinpayments-php" />
+      <path value="$PROJECT_DIR$/vendor/sigismund/coinpayments" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
 </project>

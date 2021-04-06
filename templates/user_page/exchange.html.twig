@@ -1,6 +1,51 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+<style>
+    .formul{
+        display: none ;
 
+    }
+.vef{
+    display: none;
+}
+
+.actived{
+    display: initial;
+}
+
+#prev{
+    display: flex;
+    justify-content: center;
+
+    font-size: 1rem !important;
+    text-decoration: underline;
+    margin: 20px;
+    cursor: pointer;
+    color: #0d4982;
+}
+.recep{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+    color: #1A53F0;
+}
+
+#rece{
+    text-align: center;
+    color: #c31527;
+margin: 20px 5px;
+}
+#qrcode {
+    display: flex;
+    justify-content: center;
+
+  margin: 20px 0;
+
+}
+#qrcode img{
+    width: 130px;
+}
+</style>
     <div id="preloader">
         <div class="sk-three-bounce">
             <div class="sk-child sk-bounce1"></div>
@@ -8,7 +53,6 @@
             <div class="sk-child sk-bounce3"></div>
         </div>
     </div>
-
     <div id="main-wrapper">
 
         <div class="header">
@@ -129,19 +173,16 @@
                                 </ul>
                                 <div class="tab-content tab-content-default">
                                     <div class="tab-pane fade show active" id="buy" role="tabpanel">
-                                        <form method="post" name="myform" class="currency_validate">
+                                        {{ form_start(buy) }}
+
+                                            <div class="formul actived" id="formul">
                                             <div class="form-group">
                                                 <label class="mr-sm-2">Currency</label>
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
-                                                        <label class="input-group-text"><i
-                                                                    class="cc BTC-alt"></i></label>
+                                                        <label class="input-group-text"><img src="https://img.icons8.com/ios/32/000000/bitcoin-sccepted.png" id="cryptoS"></label>
                                                     </div>
-                                                    <select name='currency' class="form-control">
-                                                        <option value="">Select</option>
-                                                        <option value="bitcoin">Bitcoin</option>
-                                                        <option value="litecoin">Litecoin</option>
-                                                    </select>
+                                                  {{ form_widget(buy.crypto) }}
                                                 </div>
                                             </div>
 
@@ -149,50 +190,70 @@
                                                 <label class="mr-sm-2">Payment Method</label>
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
-                                                        <label class="input-group-text"><i
-                                                                    class="fa fa-bank"></i></label>
+                                                        <label class="input-group-text"><img src="" id="fiatS"></label>
                                                     </div>
-                                                    <select class="form-control" name="method">
-                                                        <option value="">Select</option>
-                                                        <option value="bank">Bank of America ********45845</option>
-                                                        <option value="master">Master Card ***********5458</option>
-                                                    </select>
+                                                    {{ form_widget(buy.method) }}
                                                 </div>
-                                            </div>
+                                             </div>
 
                                             <div class="form-group">
                                                 <label class="mr-sm-2">Enter your amount</label>
                                                 <div class="input-group">
-                                                    <input type="text" name="currency_amount" class="form-control"
-                                                           placeholder="0.0214 BTC">
-                                                    <input type="text" name="usd_amount" class="form-control"
-                                                           placeholder="125.00 USD">
-                                                </div>
-                                                <div class="d-flex justify-content-between mt-3">
-                                                    <p class="mb-0">Monthly Limit</p>
-                                                    <h6 class="mb-0">$49750 remaining</h6>
+                                                   {{ form_widget(buy.giveM) }}
+                                                    {{ form_widget(buy.receiveM) }}
                                                 </div>
                                             </div>
-                                            <button type="submit" name="submit"
-                                                    class="btn btn-success btn-block">Exchange
-                                                Now</button>
+                                                <button type="button" name="submit"  onclick="next()"
+                                                        class="btn btn-success btn-block">exchange
+                                                </button>
+                                             </div>
 
-                                        </form>
+                                            <div class="vef" id="vef">
+
+                                                <h4 class="recep">reception : <span>96155555</span></h4>
+
+                                                <div class="form-group">
+                                                    <label class="mr-sm-2">Adresse crypto <span></span></label>
+                                                    <div class="input-group">
+
+                                                        {{ form_widget(buy.adresse) }}
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label class="mr-sm-2">TXID OU REFERENCE DE TRANSACTION <span></span></label>
+                                                    <div class="input-group">
+
+                                                       {{ form_widget(buy.txid) }}
+
+                                                    </div>
+                                                </div>
+                                                <button type="submit" name="submit"
+                                                        class="btn btn-success btn-block">confirmer la transaction
+                                                </button>
+
+                                                <span onclick="prev()" id="prev">retour</span>
+
+
+
+                                            </div>
+
+
+                                        {{ form_end(buy) }}
                                     </div>
                                     <div class="tab-pane fade" id="sell">
-                                        <form method="post" name="myform" class="currency2_validate">
+                                        {{ form_start(sell) }}
+
+                                        <div class="formul actived" id="sellf">
                                             <div class="form-group">
                                                 <label class="mr-sm-2">Currency</label>
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
-                                                        <label class="input-group-text"><i
-                                                                    class="cc BTC-alt"></i></label>
+                                                        <label class="input-group-text"><img src="https://img.icons8.com/ios/32/000000/bitcoin-sccepted.png" id="cryptoB"></label>
                                                     </div>
-                                                    <select name='currency' class="form-control">
-                                                        <option value="">Select</option>
-                                                        <option value="bitcoin">Bitcoin</option>
-                                                        <option value="litecoin">Litecoin</option>
-                                                    </select>
+                                                    {{ form_widget(sell.crypto) }}
                                                 </div>
                                             </div>
 
@@ -200,35 +261,49 @@
                                                 <label class="mr-sm-2">Payment Method</label>
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
-                                                        <label class="input-group-text"><i
-                                                                    class="fa fa-bank"></i></label>
+                                                        <label class="input-group-text"><img src="" id="fiatB"></label>
                                                     </div>
-                                                    <select class="form-control" name="method">
-                                                        <option value="">Select</option>
-                                                        <option value="bank">Bank of America ********45845</option>
-                                                        <option value="master">Master Card ***********5458</option>
-                                                    </select>
+                                                    {{ form_widget(sell.method) }}
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="mr-sm-2">Enter your amount</label>
                                                 <div class="input-group">
-                                                    <input type="text" name="currency_amount" class="form-control"
-                                                           placeholder="0.0214 BTC">
-                                                    <input type="text" name="usd_amount" class="form-control"
-                                                           placeholder="125.00 USD">
-                                                </div>
-                                                <div class="d-flex justify-content-between mt-3">
-                                                    <p class="mb-0">Monthly Limit</p>
-                                                    <h6 class="mb-0">$49750 remaining</h6>
+
+                                                    {{ form_widget(sell.receiveM) }}
+                                                    {{ form_widget(sell.giveM) }}
                                                 </div>
                                             </div>
-                                            <button type="submit" name="submit"
-                                                    class="btn btn-success btn-block">Exchange
-                                                Now</button>
+                                            <button type="button"   onclick="nextS()"
+                                                    class="btn btn-success btn-block">exchange
+                                            </button>
+                                        </div>
 
-                                        </form>
+                                        <div class="vef" id="sellv">
+
+                                            <h4 class="recep">adresse de reception </h4>
+                                            <p id="rece"></p>
+                                            <div id="qrcode"></div>
+
+
+
+
+                                                    {{ form_widget(sell.txid, {'attr': {'value': id}}) }}
+
+
+                                            <button type="submit" name="submit"
+                                                    class="btn btn-success btn-block">confirmer la transaction
+                                            </button>
+
+                                            <span onclick="prevS()" id="prev">retour</span>
+
+
+
+                                        </div>
+
+
+                                        {{ form_end(sell) }}
                                     </div>
                                 </div>
                             </div>
@@ -241,61 +316,53 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="buyer-seller">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <div class="buyer-info">
-                                        <div class="media">
-                                            <img class="mr-3" src="/builder/images/profile/2.png" alt="" width="50">
-                                            <div class="media-body">
-                                                <h4>Buyer</h4>
-                                                <h5>Michael John</h5>
-                                                <a href="#">hello@example.com</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="seller-info text-right">
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <h4>Seller</h4>
-                                                <h5>John Doe</h5>
-                                                <a href="#">hello@example.com</a>
-                                            </div>
-                                            <img class="ml-3" src="/builder/images/profile/1.png" alt="" width="50">
-                                        </div>
-                                    </div>
+                                <div class="d-flex justify-content-center mb-3">
+                                    <h3>Infos de la transaction</h3>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
                                         <tr>
-                                            <td><span class="text-primary">You are selling</span></td>
-                                            <td><span class="text-primary">0.00254 BTC</span></td>
+                                            <td><span class="text-primary">Type de transaction</span></td>
+                                            <td><span class="text-primary">{{ transaction[0].type }}</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Payment Method</td>
-                                            <td>Bank of America Bank ***********5245</td>
+                                            <td>methode de paiement</td>
+                                            <td>{{ transaction[0].method }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Exchange Rate</td>
-                                            <td>0.00212455 BTC</td>
+                                            <td>exchange</td>
+                                            <td>{{ transaction[0].crypto }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Fee</td>
-                                            <td>$28.00 USD</td>
+                                            <td>adresse de reception</td>
+                                            <td>{{ transaction[0].adresse }}</td>
                                         </tr>
                                         <tr>
                                             <td>Total</td>
-                                            <td>$854.00 USD</td>
+                                            <td>{{ transaction[0].receiveM }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Vat</td>
-                                            <td>
-                                                <div class="text-danger">$25.00 USD</div>
+                                            <td>Total en usd</td>
+                                            <td>{% if transaction[0].crypto == "Bitcoin" %}
+                                                  {{ transaction[0].receiveM*crypto[0].current_price }}
+
+                                                    {% elseif transaction[0].crypto == "Ethereum" %}
+                                                        {{ transaction[0].receiveM*crypto[1].current_price }}
+                                                    {% elseif transaction[0].crypto == "Ston" %}
+                                                       indefini
+                                                    {% elseif transaction[0].crypto == "BNB" %}
+                                                        {{ transaction[0].receiveM*crypto[2].current_price }}
+                                                    {% elseif transaction[0].crypto == "Trx" %}
+                                                        {{ transaction[0].receiveM*crypto[3].current_price }}
+                                                    {% elseif transaction[0].crypto == "ADA" %}
+                                                        {{ transaction[0].receiveM }}
+                                                    {% elseif transaction[0].crypto == "PM" %}
+                                                        {{ transaction[0].receiveM }}
+                                                {% endif %}
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td> Sub Total</td>
-                                            <td> $1232.00 USD</td>
-                                        </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -409,6 +476,16 @@
 
     </div>
 
+<div>
+    <input type="hidden" id="btc" value="{{ crypto[0].current_price }}">
+    <input type="hidden" id="eth" value="{{ crypto[1].current_price }}">
+
+    <input type="hidden" id="ston" value="{{ crypto[4].current_price }}">
+    <input type="hidden" id="bnb" value="{{ crypto[2].current_price }}">
+    <input type="hidden" id="trx" value="{{ crypto[3].current_price }}">
+
+
+</div>
 
 <script src="/builder/vendor/jquery/jquery.min.js"></script>
 <script src="/builder/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -419,8 +496,451 @@
 
 <script src="/builder/vendor/validator/jquery.validate.js"></script>
 <script src="/builder/vendor/validator/validator-init.js"></script>
+    <script src="{{ asset('builder/qrcode.js') }}"></script>
 
 {{ encore_entry_script_tags('script') }}
+    <script>
+        var btc = document.getElementById("btc").value;
+ var ston=  document.getElementById("ston").value;
+ var eth =  document.getElementById("eth").value;
+ var bnb =  document.getElementById("bnb").value;
+ var trx =  document.getElementById("trx").value;
+ var buyG = document.getElementById("buy_giveM");
+ var buyR = document.getElementById("buy_receiveM");
+  var sellG = document.getElementById("sell_giveM");
+  var sellR = document.getElementById("sell_receiveM");
+  var order = document.getElementById("sell_txid").value;
+        var payCur;
+        var amount1;
+        var amount2;
+        console.log(order);
+        var value1;
+        var value2;
 
+        var sel = document.getElementById('buy_crypto');
+
+      function give(){
+         value1 = sel.value;
+
+        if (value1 == "Bitcoin"){
+
+            document.getElementById("cryptoS").src = 'https://img.icons8.com/color/32/000000/bitcoin--v1.png' ;
+            buyR.value= " ";
+            buyR.placeholder= "valeur en bitcoin";
+
+
+        }else  if(value1 == "Ethereum"){
+            document.getElementById("cryptoS").src = 'https://img.icons8.com/fluent/32/000000/ethereum.png';
+            buyR.placeholder= "valeur en ETH";
+            buyR.value= " ";
+
+        }
+        else  if(value1 == "Ston"){
+            document.getElementById("cryptoS").src = '/builder/images/ston.png';
+            buyR.placeholder= "valeur en STON";
+            buyR.value= " ";
+
+        }
+        else  if(value1 == "Trx"){
+            document.getElementById("cryptoS").src = '/builder/images/trx.png';
+            buyR.placeholder= "valeur en TRX";
+            buyR.value= " ";
+
+        }
+        else  if(value1 == "PM"){
+            document.getElementById("cryptoS").src = '/builder/images/pm.png';
+            buyR.placeholder= "valeur en dollard";
+            buyR.value= " ";
+
+        }
+        else  if(value1 == "ADA"){
+            document.getElementById("cryptoS").src = 'https://img.icons8.com/fluent/32/000000/cardano.png';
+            buyR.placeholder= "valeur en usdt";
+            buyR.value= " ";
+
+        }else  if(value1 == "BNB"){
+            document.getElementById("cryptoS").src = '/builder/images/bnb.png';
+            buyR.placeholder= "valeur en Binance coin";
+            buyR.value= " ";
+
+        }
+         return value1;
+      }
+
+
+
+        var sel2 = document.getElementById("buy_method");
+        function receive() {
+            value2 = sel2.value;
+
+            if (value2 == "flooz"){
+                buyG.placeholder= "valeur en cfa";
+                buyG.value= " ";
+                document.getElementById("fiatS").src = '/builder/images/flooz.png' ;
+            }else  if(value2 == "tmoney"){
+                document.getElementById("fiatS").src = '/builder/images/tmoney.png';
+                buyG.placeholder= "valeur en cfa";
+                buyG.value= " ";
+            }
+            else  if(value2 == "wire"){
+                document.getElementById("fiatS").src = '/builder/images/wire.png';
+                buyG.placeholder= "valeur en cfa";
+                buyG.value= " ";
+            }
+
+           return value2;
+        }
+
+
+
+
+
+
+
+
+        function buyf(source, valNum){
+
+
+
+            valNum = parseFloat(valNum);
+
+            if(source == "buy_giveM" && value1 === "Bitcoin" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyR.value = ((valNum/530)/btc).toFixed(5);
+
+
+            }else if(source == "buy_giveM" && value1 === "Ethereum" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyR.value = ((valNum/530)/eth).toFixed(5);
+
+            }else if(source == "buy_giveM" && value1 === "Ston" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyR.value = ((valNum/530)/ston).toFixed(5);
+
+            }else if(source == "buy_giveM" && value1 === "ADA" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyR.value = valNum/530;
+            }else if(source == "buy_giveM" && value1 === "Trx" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyR.value = (valNum/530)/trx;
+            }else if(source == "buy_giveM" && value1 === "PM" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyR.value = valNum/530;
+            }else if(source == "buy_giveM" && value1 === "BNB" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyR.value = ((valNum/530)/bnb).toFixed(5);
+            }
+
+
+
+            if(source == "buy_receiveM" && value1 === "Bitcoin" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyG.value = (valNum*530)*btc;
+
+
+            }else if(source == "buy_receiveM" && value1 === "Ethereum" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyG.value = (valNum*530)*eth;
+
+            }else if(source == "buy_receiveM" && value1 === "Ston" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyG.value = (valNum*530)*ston;
+
+            }else if(source == "buy_receiveM" && value1 === "ADA" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyG.value = (valNum*530);
+
+            }else if(source == "buy_receiveM" && value1 === "BNB" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyG.value = (valNum*530)*bnb;
+
+            }else if(source == "buy_receiveM" && value1 === "PM" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyG.value = (valNum*530);
+
+            }else if(source == "buy_receiveM" && value1 === "Trx" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                buyG.value = (valNum*530)*trx;
+
+            }
+
+            if(value1 === "select" || value2 == "select"){
+                buyG.value = 0*valNum;
+
+                buyR.value = 0*valNum;
+
+                alert("veuillez changer de selection");
+            }
+
+        }
+
+
+
+  function next(){
+      document.getElementById("formul").classList.remove("actived");
+      document.getElementById("vef").classList.add("actived");
+
+  }
+ function prev(){
+     document.getElementById("formul").classList.add("actived");
+     document.getElementById("vef").classList.remove("actived");
+
+
+ }
+
+
+
+
+
+
+    var selt = document.getElementById('sell_crypto');
+
+
+    function gSell(){
+        value1 = selt.value;
+
+
+        if (value1 == "Bitcoin") {
+
+            document.getElementById("cryptoB").src = 'https://img.icons8.com/color/32/000000/bitcoin--v1.png';
+            sellR.value = " ";
+            sellR.placeholder = "valeur en bitcoin";
+            payCur = 'btc';
+
+        } else if (value1 == "Ethereum") {
+            document.getElementById("cryptoB").src = 'https://img.icons8.com/fluent/32/000000/ethereum.png';
+            sellR.placeholder = "valeur en ETH";
+            sellR.value = " ";
+            payCur = 'eth';
+        } else if (value1 == "Ston") {
+            document.getElementById("cryptoB").src = '/builder/images/ston.png';
+            sellR.placeholder = "valeur en STON";
+            buyR.value = " ";
+
+        } else if (value1 == "Trx") {
+            document.getElementById("cryptoB").src = '/builder/images/trx.png';
+            sellR.placeholder = "valeur en TRX";
+            sellR.value = " ";
+            payCur = 'trx';
+        } else if (value1 == "PM") {
+            document.getElementById("cryptoB").src = '/builder/images/pm.png';
+            sellR.placeholder = "valeur en dollard";
+            sellR.value = " ";
+
+        } else if (value1 == "ADA") {
+            document.getElementById("cryptoB").src = 'https://img.icons8.com/fluent/32/000000/cardano.png';
+            sellR.placeholder = "valeur en usdt";
+            sellR.value = " ";
+            payCur = 'usdttrc20';
+        } else if (value1 == "BNB") {
+            document.getElementById("cryptoB").src = '/builder/images/bnb.png';
+            sellR.placeholder = "valeur en Binance coin";
+            sellR.value = " ";
+            payCur = 'bnb';
+        }
+        return value1,payCur;
+    }
+
+
+
+    var selt2 = document.getElementById("sell_method");
+    function rSell() {
+        value2 = selt2.value;
+
+        if (value2 == "flooz"){
+            sellG.placeholder= "valeur en cfa";
+            sellG.value= " ";
+            document.getElementById("fiatB").src = '/builder/images/flooz.png' ;
+        }else  if(value2 == "tmoney"){
+            document.getElementById("fiatB").src = '/builder/images/tmoney.png';
+            sellG.placeholder= "valeur en cfa";
+            sellG.value= " ";
+        }
+        else  if(value2 == "wire"){
+            document.getElementById("fiatB").src = '/builder/images/wire.png';
+            sellG.placeholder= "valeur en cfa";
+            sellG.value= " ";
+        }
+
+        return value2;
+    }
+
+
+
+
+
+        function sellf(source, valNum){
+
+
+
+            valNum = parseFloat(valNum);
+
+            if(source == "sell_giveM" && value1 === "Bitcoin" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellR.value = ((valNum/525)/btc).toFixed(5);
+
+
+            }else if(source == "sell_giveM" && value1 === "Ethereum" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellR.value = ((valNum/525)/eth).toFixed(5);
+
+            }else if(source == "sell_giveM" && value1 === "Ston" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellR.value = ((valNum/525)/ston).toFixed(5);
+
+            }else if(source == "sell_giveM" && value1 === "ADA" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellR.value = valNum/525;
+            }else if(source == "sell_giveM" && value1 === "Trx" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellR.value = (valNum/525)/trx;
+            }else if(source == "sell_giveM" && value1 === "PM" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellR.value = valNum/525;
+            }else if(source == "sell_giveM" && value1 === "BNB" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellR.value = ((valNum/525)/bnb).toFixed(5);
+            }
+
+
+
+            if(source == "sell_receiveM" && value1 === "Bitcoin" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellG.value = (valNum*525)*btc;
+
+
+            }else if(source == "sell_receiveM" && value1 === "Ethereum" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellG.value = (valNum*525)*eth;
+
+            }else if(source == "sell_receiveM" && value1 === "Ston" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellG.value = (valNum*525)*ston;
+
+            }else if(source == "sell_receiveM" && value1 === "ADA" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellG.value = (valNum*525);
+
+            }else if(source == "sell_receiveM" && value1 === "BNB" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellG.value = (valNum*525)*bnb;
+
+            }else if(source == "sell_receiveM" && value1 === "PM" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellG.value = (valNum*525);
+
+            }else if(source == "sell_receiveM" && value1 === "Trx" && (value2 == "flooz" || value2 == "tmoney" || value2 == "wire")){
+
+                sellG.value = (valNum*525)*trx;
+
+            }
+
+            if(value1 === "select" || value2 == "select" ){
+                sellG.value = 0*valNum;
+
+                sellR.value = 0*valNum;
+
+                alert("veuillez changer de selection");
+            }
+            amount1 = sellR.value;
+              amount2 = sellG.value / 530;
+
+
+            return  amount1,amount2;
+
+        }
+
+
+        var qrcode = new QRCode("qrcode",{
+            width: 128,
+            height: 128
+        });
+        var text = document.getElementById("rece");
+        function qrmake(){
+            if (!text.innerText || text.innerText == undefined){
+
+                text.focus();
+                return;
+            }
+
+            qrcode.makeCode(text.innerText);
+            console.log(text.innerText)
+        }
+
+
+
+
+
+
+    function nextS(){
+        amount1 =  parseFloat(amount1);
+console.log(amount1);
+        var myHeaders = new Headers();
+        myHeaders.append("x-api-key", "VCRNARG-3XPM1ZG-KGVCTQZ-S1F5AYM");
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "price_amount": amount1,
+            "price_currency": payCur,
+            "pay_currency": payCur,
+            "ipn_callback_url": "https://nowpayments.io/Cbank",
+            "order_id": '{{ id }}',
+            "order_description": "sell"
+        });
+
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+        document.getElementById("sellf").classList.remove("actived");
+
+        document.getElementById("sellv").classList.add("actived");
+
+        if (!value1 || !value2){
+            document.getElementById("rece").innerText= "veuillez selectionnez deux monnaies";
+
+        }else if (!amount1 || !amount2){
+            document.getElementById("rece").innerText= "veuillez cliquez sur retour puis tapez une valeur à convertir";
+        }else{
+
+
+            fetch("https://api.nowpayments.io/v1/payment", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    document.getElementById("rece").innerText= result.pay_address;
+                    document.getElementById("sell_adresse").value= result.pay_address;
+
+                    qrmake();
+                })
+                .catch(error => console.log('error', error));
+
+        }
+
+
+    }
+    function prevS(){
+
+        document.getElementById("sellf").classList.add("actived");
+        document.getElementById("sellv").classList.remove("actived");
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
 
 {% endblock %}

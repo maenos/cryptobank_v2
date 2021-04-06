@@ -4,8 +4,71 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbad8ef52e11005271a8dfa3a20a01ac",
+    "content-hash": "f88597b3481289517504e22b0e91b3a0",
     "packages": [
+        {
+            "name": "coinpaymentsnet/coinpayments-php",
+            "version": "v1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CoinPaymentsNet/coinpayments-php.git",
+                "reference": "e7e9f8820c2179f49605aa861d7c7bd485b3c88c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CoinPaymentsNet/coinpayments-php/zipball/e7e9f8820c2179f49605aa861d7c7bd485b3c88c",
+                "reference": "e7e9f8820c2179f49605aa861d7c7bd485b3c88c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "/src"
+                ],
+                "exclude-from-classmap": [
+                    "/tests"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cole",
+                    "email": "cole@coinpayments.net",
+                    "homepage": "https://www.coinpayments.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP wrapper for the CoinPayments.net v1 API.",
+            "homepage": "https://www.coinpayments.net/apidoc-intro",
+            "keywords": [
+                "api",
+                "bitcoin",
+                "btc",
+                "coinpayments",
+                "crypto",
+                "cryptocurrency",
+                "currency",
+                "ethereum",
+                "litecoin",
+                "merchant",
+                "payment gateway",
+                "payment method",
+                "payment processor",
+                "paypal",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/CoinPaymentsNet/coinpayments-php/issues",
+                "source": "https://github.com/CoinPaymentsNet/coinpayments-php/tree/master"
+            },
+            "time": "2018-09-15T00:00:00+00:00"
+        },
         {
             "name": "composer/package-versions-deprecated",
             "version": "1.11.99.1",
@@ -78,6 +141,66 @@
                 }
             ],
             "time": "2020-11-11T10:22:58+00:00"
+        },
+        {
+            "name": "cryptapi/php-cryptapi",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cryptapi/php-cryptapi.git",
+                "reference": "d5f68dac8a2ba0edf0cbc0e57233f2bcd4095547"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cryptapi/php-cryptapi/zipball/d5f68dac8a2ba0edf0cbc0e57233f2bcd4095547",
+                "reference": "d5f68dac8a2ba0edf0cbc0e57233f2bcd4095547",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CryptAPI\\": "cryptapi/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "CryptAPI",
+                    "email": "info@cryptapi.io",
+                    "homepage": "https://cryptapi.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CryptAPI's PHP library",
+            "homepage": "https://github.com/cryptapi/php-cryptapi",
+            "keywords": [
+                "Monero",
+                "bitcoin",
+                "bitcoin cash",
+                "cryptapi",
+                "crypto",
+                "cryptocurrencies",
+                "ethereum",
+                "iota",
+                "litecoin",
+                "payments"
+            ],
+            "support": {
+                "chat": "https://cryptapi.io",
+                "docs": "https://cryptapi.io/docs/",
+                "email": "info@cryptapi.io",
+                "issues": "https://github.com/cryptapi/php-cryptapi/issues",
+                "source": "https://github.com/cryptapi/php-cryptapi/tree/master"
+            },
+            "time": "2020-08-10T17:36:44+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1545,6 +1668,60 @@
             "time": "2021-01-14T21:52:44+00:00"
         },
         {
+            "name": "hexters/coinpayment",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hexters/CoinPayment.git",
+                "reference": "029ad3bd29361bdcdd6bca7008272c43a3dffb9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hexters/CoinPayment/zipball/029ad3bd29361bdcdd6bca7008272c43a3dffb9f",
+                "reference": "029ad3bd29361bdcdd6bca7008272c43a3dffb9f",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Hexters\\CoinPayment\\Providers\\CoinPaymentServiceProvider"
+                    ],
+                    "aliases": {
+                        "CoinPayment": "Hexters\\CoinPayment\\CoinPayment"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hexters\\CoinPayment\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saifullah Syahidin",
+                    "email": "hexters@gmail.com"
+                }
+            ],
+            "description": "CoinPayment is a Laravel module for handling transactions from CoinPayment like a create transaction, history transaction, etc.",
+            "keywords": [
+                "Coinpayment",
+                "bitcoin",
+                "cryptocurrency",
+                "laravel",
+                "payment gateway"
+            ],
+            "support": {
+                "issues": "https://github.com/hexters/CoinPayment/issues",
+                "source": "https://github.com/hexters/CoinPayment/tree/v3.0.0"
+            },
+            "time": "2021-01-09T22:09:24+00:00"
+        },
+        {
             "name": "laminas/laminas-code",
             "version": "4.0.0",
             "source": {
@@ -2372,6 +2549,55 @@
                 "source": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/tree/v5.6.1"
             },
             "time": "2020-08-25T19:10:18+00:00"
+        },
+        {
+            "name": "sigismund/coinpayments",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sigismund/coinpayments.git",
+                "reference": "f67ee7363c9687041b00e0191c1281841bb7bd98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sigismund/coinpayments/zipball/f67ee7363c9687041b00e0191c1281841bb7bd98",
+                "reference": "f67ee7363c9687041b00e0191c1281841bb7bd98",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.2@dev",
+                "squizlabs/php_codesniffer": "^3.0@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sigismund\\CoinPayments\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Žiga Drnovšček",
+                    "email": "web@sigismund.si"
+                }
+            ],
+            "description": "CoinPayments API client",
+            "keywords": [
+                "coinp ayments",
+                "coinpayments",
+                "crypto",
+                "crypto payment",
+                "cryptocurrency",
+                "payment processor"
+            ],
+            "support": {
+                "issues": "https://github.com/sigismund/coinpayments/issues",
+                "source": "https://github.com/sigismund/coinpayments/tree/master"
+            },
+            "time": "2018-11-05T07:32:43+00:00"
         },
         {
             "name": "symfony/asset",
@@ -8189,7 +8415,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2.5",
+        "php": ">=7.3",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },

@@ -20,11 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13987034-e781-4d84-b9ce-9b86c62ddf8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210324232428.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/builder/images/bnb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/builder/images/flooz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/builder/images/pm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/builder/images/ston.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/builder/images/tmoney.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/builder/images/trx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/builder/images/wire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/builder/qrcode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Transaction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/BuyType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/SellType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/TransactionRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cryptobank_v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cryptobank_v2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/CallApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/CallApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user_page/compte.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/compte.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user_page/exchange.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/exchange.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_page/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user_page/repair.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/repair.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +67,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -150,6 +179,10 @@
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
       <path value="$PROJECT_DIR$/vendor/mercuryseries/flashy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/cryptapi/php-cryptapi" />
+      <path value="$PROJECT_DIR$/vendor/hexters/coinpayment" />
+      <path value="$PROJECT_DIR$/vendor/coinpaymentsnet/coinpayments-php" />
+      <path value="$PROJECT_DIR$/vendor/sigismund/coinpayments" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pezyhZXx8WcBcYLgeFUroiL4Xo" />
@@ -167,14 +200,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/build" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\elodo\Documents\projet\cryptobank_v2\public\build" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\elodo\Documents\projet\cryptobank_v2\assets\styles" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\elodo\Documents\projet\cryptobank_v2\public\build" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -191,6 +225,21 @@
       <workItem from="1616081489213" duration="6033000" />
       <workItem from="1616188097906" duration="1111000" />
       <workItem from="1616189320385" duration="1545000" />
+      <workItem from="1616240290551" duration="5147000" />
+      <workItem from="1616291755615" duration="3802000" />
+      <workItem from="1616336837059" duration="6693000" />
+      <workItem from="1616412874504" duration="4073000" />
+      <workItem from="1616511469585" duration="8477000" />
+      <workItem from="1616598335865" duration="16435000" />
+      <workItem from="1616761277571" duration="12405000" />
+      <workItem from="1616854840565" duration="8374000" />
+      <workItem from="1616932202646" duration="19082000" />
+      <workItem from="1617087176715" duration="1371000" />
+      <workItem from="1617088566880" duration="811000" />
+      <workItem from="1617112239961" duration="8199000" />
+      <workItem from="1617375780869" duration="4218000" />
+      <workItem from="1617492191165" duration="21561000" />
+      <workItem from="1617660469647" duration="622000" />
     </task>
     <servers />
   </component>
@@ -217,14 +266,22 @@
       <screen x="1600" y="0" width="1360" height="728" />
     </state>
     <state x="2090" y="243" key="#Composer/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1615558612590" />
-    <state x="1906" y="42" key="#Inspections" timestamp="1615571051308">
+    <state x="1906" y="42" key="#Inspections" timestamp="1616936010787">
       <screen x="1600" y="0" width="1360" height="728" />
     </state>
-    <state x="1906" y="42" key="#Inspections/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1615571051308" />
-    <state x="2010" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615561869701">
+    <state x="1906" y="42" key="#Inspections/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616936010787" />
+    <state x="2086" y="156" key="#Web_Browsers" timestamp="1616976272699">
       <screen x="1600" y="0" width="1360" height="728" />
     </state>
-    <state x="2010" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1615561869701" />
+    <state x="2086" y="156" key="#Web_Browsers/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616976272699" />
+    <state x="1933" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1616797913773">
+      <screen x="1600" y="0" width="1360" height="728" />
+    </state>
+    <state x="1933" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616797913773" />
+    <state x="2010" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616794219686">
+      <screen x="1600" y="0" width="1360" height="728" />
+    </state>
+    <state x="2010" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616794219686" />
     <state x="119" y="175" width="1176" height="544" key="DiffContextDialog" timestamp="1615562150074">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -245,17 +302,43 @@
       <screen x="1600" y="0" width="1360" height="728" />
     </state>
     <state width="416" height="600" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1615559974425" />
-    <state x="602" y="47" key="SettingsEditor" timestamp="1616188517205">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="1860" y="101" key="IDE.errors.dialog" timestamp="1616855318137">
+      <screen x="1600" y="0" width="1360" height="728" />
+    </state>
+    <state x="1860" y="101" key="IDE.errors.dialog/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616855318137" />
+    <state x="2015" y="108" key="NewPhpClassDialog" timestamp="1616889525644">
+      <screen x="1600" y="0" width="1360" height="728" />
+    </state>
+    <state x="2015" y="108" key="NewPhpClassDialog/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616889525644" />
+    <state x="2115" y="295" key="NewPhpFileDialog" timestamp="1616797703025">
+      <screen x="1600" y="0" width="1360" height="728" />
+    </state>
+    <state x="2115" y="295" key="NewPhpFileDialog/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616797703025" />
+    <state x="1966" y="20" key="SettingsEditor" timestamp="1616856059063">
+      <screen x="1600" y="0" width="1360" height="728" />
     </state>
     <state x="602" y="47" key="SettingsEditor/0.0.1600.860/1600.0.1024.728@1600.0.1024.728" timestamp="1616188517205" />
+    <state x="1966" y="20" key="SettingsEditor/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616856059063" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1616291981057">
+      <screen x="1600" y="0" width="1360" height="728" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616291981057" />
     <state x="1692" y="92" width="1176" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1615569802897">
       <screen x="1600" y="0" width="1360" height="728" />
     </state>
     <state x="1692" y="92" width="1176" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1615569802897" />
+    <state x="387" y="-18" width="1176" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1617116294095">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="387" y="-18" width="1176" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1600.860/1600.0.1360.728@0.0.1600.860" timestamp="1617116294095" />
+    <state x="387" y="-18" width="1176" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616669342412" />
     <state x="1936" y="162" key="run.anything.popup" timestamp="1616005413467">
       <screen x="1600" y="0" width="1360" height="728" />
     </state>
     <state x="1936" y="162" key="run.anything.popup/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616005413467" />
+    <state x="1943" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1616795288754">
+      <screen x="1600" y="0" width="1360" height="728" />
+    </state>
+    <state x="1943" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1616795288754" />
   </component>
 </project>
