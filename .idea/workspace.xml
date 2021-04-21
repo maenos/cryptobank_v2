@@ -20,34 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13987034-e781-4d84-b9ce-9b86c62ddf8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210324232428.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/builder/images/bnb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/builder/images/flooz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/builder/images/pm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/builder/images/ston.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/builder/images/tmoney.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/builder/images/trx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/builder/images/wire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/builder/qrcode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Transaction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/BuyType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/SellType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/TransactionRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/cryptobank_v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cryptobank_v2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserPageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/CallApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/CallApi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user_page/compte.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/compte.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_page/exchange.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/exchange.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_page/repair.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/repair.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +163,7 @@
       <path value="$PROJECT_DIR$/vendor/hexters/coinpayment" />
       <path value="$PROJECT_DIR$/vendor/coinpaymentsnet/coinpayments-php" />
       <path value="$PROJECT_DIR$/vendor/sigismund/coinpayments" />
+      <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pezyhZXx8WcBcYLgeFUroiL4Xo" />
@@ -197,7 +178,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/build" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../miaplenou2" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -239,7 +220,10 @@
       <workItem from="1617112239961" duration="8199000" />
       <workItem from="1617375780869" duration="4218000" />
       <workItem from="1617492191165" duration="21561000" />
-      <workItem from="1617660469647" duration="622000" />
+      <workItem from="1617660469647" duration="7299000" />
+      <workItem from="1617897495569" duration="24000" />
+      <workItem from="1617925791371" duration="1516000" />
+      <workItem from="1618247686850" duration="832000" />
     </task>
     <servers />
   </component>
@@ -286,6 +270,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="119" y="175" width="1176" height="544" key="DiffContextDialog/0.0.1600.860/1600.0.1360.728@1600.0.1360.728" timestamp="1615562150074" />
+    <state x="580" y="187" key="FileChooserDialogImpl" timestamp="1618249198902">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="187" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1366.728@0.0.1600.860" timestamp="1618249198902" />
     <state width="416" height="600" key="GridCell.Tab.0.bottom" timestamp="1615559974426">
       <screen x="1600" y="0" width="1360" height="728" />
     </state>

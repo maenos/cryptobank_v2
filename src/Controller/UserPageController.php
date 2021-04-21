@@ -111,8 +111,11 @@ class UserPageController extends AbstractController
     #[Route('/account', name: 'account')]
     public function account(): Response
     {
+        $transaction = $this->getDoctrine()->getRepository(Transaction::class)->findAll();
+
         return $this->render('user_page/compte.html.twig', [
             'controller_name' => 'UserPageController',
+            'transactions'=>$transaction
         ]);
     }
 
