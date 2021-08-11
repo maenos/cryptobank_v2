@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="{{ ea.i18n.htmlLocale }}" dir="{{ ea.i18n.textDirection }}">
+<head>
+    {% block head_metas %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, noimageindex, notranslate, nocache" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <meta name="generator" content="EasyAdmin" />
+    {% endblock head_metas %}
+
+    <title>{% block page_title %}{{ block('content_title')|striptags|raw }}{% endblock %}</title>
+
+    {% block head_stylesheets %}
+
+
+        <link rel="stylesheet" href="{{ asset('bundles/easyadmin/app.css') }}">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+            <link rel="stylesheet" href="{{ asset('build/admin/css/admin.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/admin/css/admin2.css') }}">
+
+
+    {% endblock %}
+
+    {% block configured_stylesheets %}
+        {% for css_asset in ea.assets.cssFiles ?? [] %}
+            <link rel="stylesheet" href="{{ asset(css_asset) }}">
+        {% endfor %}
+    {% endblock %}
+
+    {% block head_favicon %}
+        <link rel="shortcut icon" href="{{ asset(ea.dashboardFaviconPath) }}">
+    {% endblock %}
+
+    {% block head_javascript %}
+        <script src="{{ asset('bundles/easyadmin/app.js') }}"></script>
+
+        <script src="{{ asset('build/admin/js/admin.js') }}"></script>
+    {% endblock head_javascript %}
+
+    {% if 'rtl' == ea.i18n.textDirection %}
+        <link rel="stylesheet" href="{{ asset('bundles/easyadmin/app.rtl.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/easyadmin/app-custom-rtl.css') }}">
+    {% endif %}
+
+    {% block configured_head_contents %}
+        {% for htmlContent in ea.assets.headContents ?? [] %}
+            {{ htmlContent|raw }}
+        {% endfor %}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+ <input type="checkbox"  id="nav-toggle">
+      {% block sidebar %}
+        <div class="sidebar">
+        <div class="sidebar-brand">
+        <h1> {% block header_logo %}<span class="lab la-accusoft"> </span> <span style="font-size: 1.1rem">{{ ea.dashboardTitle|raw }}</span>{% endblock %}</h1>
+        </div>
+        <div class="sidebar-menu">
+            {% block main_menu_wrapper %}
+                {{ include(ea.templatePath('main_menu')) }}
+            {% endblock main_menu_wrapper %}
+
+        </div>
+        </div>
+     {% endblock %}
+
+     {% block main_content %}
+        <div class="main-content">
+      {% block main_header %}
+      <header>
+        <h2>
+        <label for="nav-toggle"><span class="las la-bars"></span></label>
+        Dashboard
+        </h2>
+
+
+        <div class="user-wrapper">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png" width="30px" height="30px">
+            <div>
+                <h4>{{ ea.userMenu.name }}</h4>
+                <small><a href="/logout" style="text-decoration: underline; color: #00b0ff">Deconnexion</a></small>
+
+            </div>
+        </div>
+
+
+      </header>
+      {% endblock %}
+         {% block content %}
+             <main>
+               <div class="content-head">
+                   <div class="headerr">
+                   <h2> {% block content_title %}{% endblock %}</h2>
+                   </div>
+                       <div class="btn-block">
+                   {% block page_actions_wrapper %}
+                    {% block page_actions %}{% endblock %}
+                   {% endblock %}
+                       </div>
+                   </div>
+
+                 <div class="content-bod">
+                     <section id="main" class="content-body">
+                         {% block main %}{% endblock %}
+                     </section>
+                 </div>
+                 <div class="content-footer">
+
+                     {% block content_footer_wrapper %}
+                         {% set content_footer = block('content_footer') is defined ? block('content_footer') : '' %}
+                         {% if content_footer is not empty %}
+                             <section class="content-footer">
+                                 {{ content_footer }}
+                             </section>
+                         {% endif %}
+                     {% endblock %}
+                 </div>
+
+
+             </main>
+         {% endblock %}
+
+        </div>
+
+     {% endblock %}
+
+{% endblock %}
+{% block body_javascript %}{% endblock body_javascript %}
+{% block configured_javascripts %}
+    {% for js_asset in ea.assets.jsFiles ?? [] %}
+        <script src="{{ asset(js_asset) }}"></script>
+    {% endfor %}
+{% endblock %}
+
+{% block configured_body_contents %}
+    {% for htmlContent in ea.assets.bodyContents ?? [] %}
+        {{ htmlContent|raw }}
+    {% endfor %}
+{% endblock %}
+</body>
+</html>

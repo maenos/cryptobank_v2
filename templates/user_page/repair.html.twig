@@ -32,20 +32,18 @@
                                             <span class="arrow"><i class="la la-angle-down"></i></span>
                                         </div>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="{{ path('account') }}" class="dropdown-item">
-                                                <i class="mdi mdi-account"></i> Account
+                                            <a href="{{ path('actu') }}" class="dropdown-item">
+                                                <i class="mdi mdi-account"></i> actualité
                                             </a>
-                                            <a href="history.html" class="dropdown-item">
-                                                <i class="la la-book"></i> History
+                                            <a href="{{ path('shit') }}" class="dropdown-item">
+                                                <i class="la la-book"></i> Shitcoin
                                             </a>
-                                            <a href="{{ path('setting') }}" class="dropdown-item">
-                                                <i class="la la-cog"></i> Setting
+                                            <a href="{{ path('contact') }}" class="dropdown-item">
+                                                <i class="la la-cog"></i> contact
                                             </a>
-                                            <a href="lock.html" class="dropdown-item">
-                                                <i class="la la-lock"></i> Lock
-                                            </a>
+
                                             <a href="{{ path('logout') }}" class="dropdown-item logout">
-                                                <i class="la la-sign-out"></i> Logout
+                                                <i class="la la-sign-out"></i> Déconnexion
                                             </a>
                                         </div>
                                     </div>
@@ -60,28 +58,28 @@
         <div class="sidebar">
             <a class="brand-logo" href="{{ path('user_page') }}">
                 <img src="/builder/images/logo.png" alt="">
-                <span>Treemium </span></a>
+                <span>CRPTOBANk </span></a>
             <div class="menu">
                 <ul>
                     <li>
                         <a href="{{ path('user_page') }}">
                             <span><i class="mdi mdi-view-dashboard"></i></span>
-                            <span class="nav-text">Home</span>
+                            <span class="nav-text">accueil</span>
                         </a>
                     </li>
                     <li><a href="{{ path('exchange') }}">
                             <span><i class="mdi mdi-repeat"></i></span>
-                            <span class="nav-text">Exchange</span>
+                            <span class="nav-text">Echange</span>
                         </a>
                     </li>
                     <li><a href="{{ path('account') }}">
                             <span><i class="mdi mdi-account"></i></span>
-                            <span class="nav-text">Account</span>
+                            <span class="nav-text">Historique</span>
                         </a>
                     </li>
                     <li><a href="{{ path('setting') }}">
                             <span><i class="mdi mdi-settings"></i></span>
-                            <span class="nav-text">Setting</span>
+                            <span class="nav-text">Compte</span>
                         </a>
                     </li>
                 </ul>
@@ -126,25 +124,25 @@
                             <div class="card-body">
                                 <ul>
                                     <li class="nav-item">
-                                        <a href="settings.html" class="nav-link active">
+                                        <a href="#" class="nav-link active">
                                             <i class="mdi mdi-account"></i>
-                                            <span>Edit Profile</span>
+                                            <span>Editer son profile</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="settings-preferences.html" class="nav-link">
+                                        <a href=#" class="nav-link">
                                             <i class="la la-cog"></i>
                                             <span>Preferences</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="settings-security.html" class="nav-link">
+                                        <a href="#" class="nav-link">
                                             <i class="la la-lock"></i>
-                                            <span>Security</span>
+                                            <span>Securité</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="settings-account.html" class="nav-link">
+                                        <a href="#" class="nav-link">
                                             <i class="la la-university"></i>
                                             <span>Linked Account</span>
                                         </a>
@@ -158,14 +156,14 @@
                             <div class="col-xl-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">User Profile</h4>
+                                        <h4 class="card-title">Profile</h4>
                                     </div>
                                     <div class="card-body">
                                         <form action="#">
                                             <div class="form-row">
                                                 <div class="form-group col-xl-12">
-                                                    <label class="mr-sm-2">Your Name</label>
-                                                    <input type="text" class="form-control" placeholder="Name">
+                                                    <label class="mr-sm-2">Nom</label>
+                                                    <input type="text" class="form-control" placeholder="Name" value="{{ app.user.username }}">
                                                 </div>
                                                 <div class="form-group col-xl-12">
                                                     <div class="media align-items-center mb-3">
@@ -199,15 +197,14 @@
                                         <form action="#">
                                             <div class="form-row">
                                                 <div class="form-group col-xl-12">
-                                                    <label class="mr-sm-2">New Email</label>
-                                                    <input type="email" class="form-control" placeholder="Email">
+                                                    <label class="mr-sm-2">Email</label>
+                                                    <input type="email" class="form-control" placeholder="Email" value="{{ app.user.email }}">
                                                 </div>
                                                 <div class="form-group col-xl-12">
                                                     <label class="mr-sm-2">New Password</label>
                                                     <input type="password" class="form-control"
-                                                           placeholder="**********">
-                                                    <p class="mt-2 mb-0">Enable two factor authencation on the security
-                                                        page
+                                                           placeholder="**********" >
+                                                    <p class="mt-2 mb-0">
                                                     </p>
                                                 </div>
                                                 <div class="col-12">

@@ -85,16 +85,6 @@ class DashboardController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/reset", name="reset")
-     */
-    public function reset(): Response
-    {
-        return $this->render('cryptobank/reset.html.twig', [
-            'controller_name' => 'DashboardController'
-        ]);
-
-    }
 
     /**
      * @Route("/about", name="about")

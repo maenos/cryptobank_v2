@@ -16,14 +16,14 @@
             <div class="row">
                 <div class="col-xl-12">
                     <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                        <a class="navbar-brand" href="landing.html"><img src="/builder/images/logo.png" alt="">
-                            <span>Treemium </span></a>
+                        <a class="navbar-brand" href="{{ path('dashboard') }}"><img src="/builder/images/logo.png" alt="">
+                            <span>CRYPTOBANk </span></a>
 
                         <div class="dashboard_log">
                             <div class="d-flex align-items-center">
                                 <div class="header_auth">
-                                    <a href="signin.html" class="btn btn-success  mx-2">Sign In</a>
-                                    <a href="signup.html" class="btn btn-outline-primary  mx-2">Sign Up</a>
+                                    <a href="{{ path('login') }}" class="btn btn-primary">Sign In</a>
+                                    <a href="{{ path('register') }}" class="btn btn-outline-primary">Sign Up</a>
                                 </div>
                             </div>
                         </div>
@@ -150,10 +150,10 @@
             <div class="row">
                 <div class="col-xl-6 col-md-6">
                     <div class="footer-link text-left">
-                        <a href="#" class="m_logo"><img src="images/logo.png" alt=""></a>
-                        <a href="about.html">About</a>
-                        <a href="privacy-policy.html">Privacy Policy</a>
-                        <a href="term-condition.html">Term & Service</a>
+                        <a href="#" class="m_logo"><img src="/builder/images/logo.png" alt=""></a>
+                        <a href="{{ path('about') }}">About</a>
+                        <a href="{{ path('privacy') }}">Privacy Policy</a>
+                        <a href="{{ path('condition') }}">Term & Service</a>
                     </div>
                 </div>
                 <div class="col-xl-6 col-md-6 text-lg-right text-center">

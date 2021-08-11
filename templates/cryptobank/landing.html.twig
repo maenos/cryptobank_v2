@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-xl-12 position-relative">
                         <nav class="navbar navbar-expand-lg navbar-light px-0">
-                            <a class="navbar-brand" href="landing.html"><img src="/builder/images/logo.png" alt="">
+                            <a class="navbar-brand" href="#"><img src="/builder/images/logo.png" alt="">
                                 <span>CrptoBank </span></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -36,11 +36,9 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" data-scroll-nav="1">Market</a>
                                     </li>
+
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" data-scroll-nav="2">Portfolio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" data-scroll-nav="3">Testimonial</a>
+                                        <a class="nav-link" href="#" data-scroll-nav="2">Testimonial</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" data-scroll-nav="4">Contact</a>
@@ -174,10 +172,10 @@
                                                 </td>
 
                                                 <td>
-                                                    USD 680,175.06
+                                                    USD <span id="btcPrice"></span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-success">+1.13%</span>
+                                                   <span id="btcPrecent"></span>
                                                 </td>
                                                 <td> <span class="sparkline8"></span></td>
                                                 <td><a href="#" class="btn btn-success">Buy</a></td>
@@ -191,10 +189,10 @@
                                                 </td>
 
                                                 <td>
-                                                    USD 680,175.06
+                                                    USD <span id="ethPrice"></span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-success">+1.13%</span>
+                                                    <span id="ethPercent"></span>
                                                 </td>
                                                 <td> <span class="sparkline8"></span></td>
                                                 <td><a href="#" class="btn btn-success">Buy</a></td>
@@ -225,10 +223,10 @@
                                                 </td>
 
                                                 <td>
-                                                    USD 680,175.06
+                                                    USD <span id="ltcPrice"></span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-danger">-0.47%</span>
+                                                    <span id="ltcPercent"></span>%
                                                 </td>
                                                 <td> <span class="sparkline8"></span></td>
                                                 <td><a href="#" class="btn btn-success">Buy</a></td>
@@ -284,70 +282,9 @@
             </div>
         </div>
 
-        <div class="portfolio section-padding" data-scroll-index="2">
-            <div class="container">
-                <div class="row py-lg-5 justify-content-center">
-                    <div class="col-xl-7">
-                        <div class="section_heading">
-                            <span>Join Us</span>
-                            <h3>Create your CryptoBank  portfolio today</h3>
-                            <p>CryptoBank  has a variety of features that make it the best place to start trading</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-xl-7 col-md-6">
-                        <div class="portfolio_img">
-                            <img src="/builder/images/portfolio.jpg" alt="" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-                <div class="row portfolio_list">
-                    <div class="col-xl-6 col-md-6">
-                        <div class="media">
-                            <span class="port-icon"> <i class="la la-chart-bar"></i></span>
-                            <div class="media-body">
-                                <h4>Manage your portfolio</h4>
-                                <p>Buy and sell popular digital currencies, keep track of them in the one place.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-md-6">
-                        <div class="media">
-                            <span class="port-icon"> <i class="la la-calendar-check"></i></span>
-                            <div class="media-body">
-                                <h4>Recurring buys</h4>
-                                <p>Invest in CryptoBank  slowly over time by scheduling buys daily, weekly, or
-                                    monthly.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-md-6">
-                        <div class="media">
-                            <span class="port-icon"> <i class="la la-lock"></i></span>
-                            <div class="media-body">
-                                <h4>Vault protection</h4>
-                                <p>For added security, store your funds in a vault with time delayed withdrawals.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-md-6">
-                        <div class="media">
-                            <span class="port-icon"> <i class="la la-mobile"></i></span>
-                            <div class="media-body">
-                                <h4>Mobile apps</h4>
-                                <p>Stay on top of the markets with the CryptoBank  app for <a href="#">Android</a> or
-                                    <a href="#">iOS</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="testimonial section-padding" data-scroll-index="3">
+
+        <div class="testimonial section-padding" data-scroll-index="2">
             <div class="container">
                 <div class="row py-lg-5 justify-content-center">
                     <div class="col-xl-7">
@@ -474,9 +411,9 @@
                     <div class="col-xl-6 col-md-6">
                         <div class="footer-link text-left">
                             <a href="#" class="m_logo"><img src="/builder/images/logo.png" alt=""></a>
-                            <a href="{{ path('about') }}">About</a>
-                            <a href="{{ path('privacy') }}">Privacy Policy</a>
-                            <a href="{{ path('condition') }}">Term & Service</a>
+                            <a href="#">About</a>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Term & Service</a>
                         </div>
                     </div>
                     <div class="col-xl-6 col-md-6 text-lg-right text-center">
@@ -538,4 +475,70 @@
     {{ encore_entry_script_tags('script') }}
 
 
+    <script>
+        /* Récupération des données de cours du Bitcoin */
+        function getCours() {
+            /* Appel AJAX vers cryptocompare.com */
+            var ajax=new XMLHttpRequest();
+            console.log("readyState après new : "+ajax.readyState);
+            /* Détection de l'avancement de l'appel */
+            ajax.onreadystatechange=function() {
+                console.log("readyState a changé et vaut : "+ajax.readyState)
+            }
+            /* Détection de la fin de l'appel */
+            ajax.onload = function() {
+
+                if (this.status === 200) { /* Le service a bien répondu */
+                    try {
+                        var json=JSON.parse(this.response); // Convertir le retour JSON
+                    } catch(err) {
+                        console.log("Retour JSON incorrect");
+                        return false;
+                    }
+                    /* Vérifier que le JSON de retour contient bien la propriété EUR */
+                    if (json) {
+
+                        document.getElementById("btcPrice").innerText= json[0].current_price;
+                        document.getElementById("ethPrice").innerText= json[1].current_price;
+                        document.getElementById("ltcPrice").innerText= json[2].current_price;
+
+                        document.getElementById("btcPrecent").innerText= json[0].price_change_percentage_24h+' '+'%';
+                        document.getElementById("ethPercent").innerText= json[1].price_change_percentage_24h+' '+'%';
+                        document.getElementById("ltcPercent").innerText= json[2].price_change_percentage_24h+' '+'%';
+
+
+                        console.log(json);
+                    } else {
+                        console.log("Retour du cours incorrect");
+                    }
+                }
+            }
+            /* Détection du timeout */
+            ajax.ontimeout=function() {
+                console.log("Le service n'a pas répondu à temps : nouvel essai dans 5 sec");
+                /* Relancer l'appel 5 secondes plus tard */
+                setTimeout("getCours()", 5000);
+            }
+
+            /* Préparation de la requête et envoi */
+            var url="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2Cethereum%2Clitecoin&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h";
+            ajax.open("GET", url, true);
+            ajax.timeout=1000; /* Délai d'expiration à 1 seconde */
+            ajax.send();
+        }
+
+
+
+
+
+
+
+        /* Démarrage de l'appel */
+        window.onload=function() {
+            getCours();
+            setInterval("getCours()", 30000);
+        }
+
+
+    </script>
 {% endblock %}

@@ -1,24 +1,38 @@
 <?php
 
 namespace App\Controller;
+use App\Entity\Actu;
+use App\Entity\Shitcoin;
 use App\Entity\Transaction;
 use App\Form\BuyType;
 use App\Form\SellType;
 use App\Service\CallApi;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 class UserPageController extends AbstractController
-{
+{  private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
 
     #[Route('/home', name: 'user_page')]
     public function index(CallApi  $api): Response
     {
         $crypto = $api->Content();
 
+        $actu = $this->entityManager->getRepository(Actu::class)->findBy([],['id'=>'DESC'],'1');
+
+        $shit = $this->entityManager->getRepository(Shitcoin::class)->findBy([],['id'=>'DESC'],'3');
+
         return $this->render('user_page/index.html.twig', [
-            'crypto' => $crypto
+            'crypto' => $crypto,
+            'actu'=>$actu,
+            'shit'=>$shit
         ]);
     }
 
@@ -50,7 +64,7 @@ class UserPageController extends AbstractController
              $email = $user->getEmail();
             $buy->setType('achat');
             $buy->setEmail($email);
-            $buy->setStatus('attente');
+            $buy->setIspaid(false);
             $buy->setDate(new \DateTime('now'));
 
 
@@ -83,7 +97,8 @@ class UserPageController extends AbstractController
 
             $sell->setType('vente');
             $sell->setEmail($email);
-            $sell->setStatus('attente');
+
+            $sell->setIspaid(false);
             $sell->setDate(new \DateTime('now'));
 
              $sell->setTxid($id);
@@ -98,13 +113,16 @@ class UserPageController extends AbstractController
         }
         $transaction = $this->getDoctrine()->getRepository(Transaction::class)->findBy(array(), array('id' => 'desc'),1,0);
 
+
+
         return $this->render('user_page/exchange.html.twig', [
             'controller_name' => 'UserPageController',
             'crypto'=> $cu,
             'buy'=>$buyform->createView(),
             'transaction'=> $transaction,
             'sell'=>$sellform->createView(),
-            'id'=>$id
+            'id'=>$id,
+            'user'=>$user
         ]);
     }
 

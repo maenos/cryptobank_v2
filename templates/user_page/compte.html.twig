@@ -30,20 +30,18 @@
                                             <span class="arrow"><i class="la la-angle-down"></i></span>
                                         </div>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="{{ path('account') }}" class="dropdown-item">
-                                                <i class="mdi mdi-account"></i> Account
+                                            <a href="{{ path('actu') }}" class="dropdown-item">
+                                                <i class="mdi mdi-account"></i> actualité
                                             </a>
-                                            <a href="history.html" class="dropdown-item">
-                                                <i class="la la-book"></i> History
+                                            <a href="{{ path('shit') }}" class="dropdown-item">
+                                                <i class="la la-book"></i> Shitcoin
                                             </a>
-                                            <a href="{{ path('setting') }}" class="dropdown-item">
-                                                <i class="la la-cog"></i> Setting
+                                            <a href="{{ path('contact') }}" class="dropdown-item">
+                                                <i class="la la-cog"></i> contact
                                             </a>
-                                            <a href="lock.html" class="dropdown-item">
-                                                <i class="la la-lock"></i> Lock
-                                            </a>
+
                                             <a href="{{ path('logout') }}" class="dropdown-item logout">
-                                                <i class="la la-sign-out"></i> Logout
+                                                <i class="la la-sign-out"></i> Déconnexion
                                             </a>
                                         </div>
                                     </div>
@@ -58,28 +56,28 @@
         <div class="sidebar">
             <a class="brand-logo" href="{{ path('user_page') }}">
                 <img src="/builder/images/logo.png" alt="">
-                <span>Treemium </span></a>
+                <span>CRYPTOBANk </span></a>
             <div class="menu">
                 <ul>
                     <li>
                         <a href="{{ path('user_page') }}">
                             <span><i class="mdi mdi-view-dashboard"></i></span>
-                            <span class="nav-text">Home</span>
+                            <span class="nav-text">accueil</span>
                         </a>
                     </li>
                     <li><a href="{{ path('exchange') }}">
                             <span><i class="mdi mdi-repeat"></i></span>
-                            <span class="nav-text">Exchange</span>
+                            <span class="nav-text">Echange</span>
                         </a>
                     </li>
                     <li><a href="{{ path('account') }}">
                             <span><i class="mdi mdi-account"></i></span>
-                            <span class="nav-text">Account</span>
+                            <span class="nav-text">Historique</span>
                         </a>
                     </li>
                     <li><a href="{{ path('setting') }}">
                             <span><i class="mdi mdi-settings"></i></span>
-                            <span class="nav-text">Setting</span>
+                            <span class="nav-text">Compte</span>
                         </a>
                     </li>
                 </ul>
@@ -144,7 +142,11 @@
                                                             {{ transaction.method }}
                                                         </td>
                                                         <td class="text-danger">{{ transaction.giveM }}</td>
-                                                        <td> {{ transaction.status }}</td>
+                                                        {% if transaction.ispaid %}
+                                                        <td> paye</td>
+                                                        {% else %}
+                                                            <td> en cours</td>
+                                                        {% endif %}
                                                         <td> {{ transaction.date | date("H:m:s   d-m-Y") }}</td>
                                                     </tr>
 
@@ -164,7 +166,11 @@
                                                         </td>
 
                                                         <td class="text-danger">{{ transaction.receiveM }}</td>
-                                                        <td> {{ transaction.status }}</td>
+                                                        {% if transaction.ispaid %}
+                                                            <td> paye</td>
+                                                        {% else %}
+                                                            <td> en cours</td>
+                                                        {% endif %}
                                                         <td> {{ transaction.date | date("Y-m-d H:m:s") }}</td>
 
                                                         {% endif %}

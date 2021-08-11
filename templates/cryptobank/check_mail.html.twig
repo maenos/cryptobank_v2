@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+        <div class="authincation section-padding">
+            <div class="container h-100">
+                <div class="row justify-content-center h-100 align-items-center">
+                    <div class="col-xl-5 col-md-6">
+                        <div class="mini-logo text-center my-5">
+                            <a href="landing.html"><img src="/builder/images/logo.png" alt=""></a>
+                        </div>
+                        <div class="auth-form card">
+                            <div class="card-header justify-content-center">
+                                <h4 class="card-title">Reset password</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    S'il existe un compte correspondant à votre e-mail, un e-mail vient d'être envoyé contenant un lien que vous pouvez utiliser pour réinitialiser votre mot de passe. Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+                                </p>
+                                <p>Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier spam ou <a class=" btn-info" href="{{ path('app_forgot_password_request') }}">try again</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="/builder/vendor/jquery/jquery.min.js"></script>
+    <script src="/builder/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    {{ encore_entry_script_tags('script') }}
+
+
+{% endblock %}

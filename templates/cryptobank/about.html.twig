@@ -15,14 +15,14 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                            <a class="navbar-brand" href="landing.html"><img src="/builder/images/logo.png" alt="">
-                                <span>Treemium </span></a>
+                            <a class="navbar-brand" href="{{ path('dashboard') }}"><img src="/builder/images/logo.png" alt="">
+                                <span>CRYPTOBANk </span></a>
 
                             <div class="dashboard_log">
                                 <div class="d-flex align-items-center">
                                     <div class="header_auth">
-                                        <a href="signin.html" class="btn btn-success  mx-2">Sign In</a>
-                                        <a href="signup.html" class="btn btn-outline-primary  mx-2">Sign Up</a>
+                                        <a href="{{ path('login') }}" class="btn btn-primary">Sign In</a>
+                                        <a href="{{ path('register') }}" class="btn btn-outline-primary">Sign Up</a>
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-xl-6 col-sm-6 col-6">
                         <div class="page_title-content">
-                            <p>Last updated: October 21, 2020</p>
+                            <p>Dernière mise à jour : 21 octobre 2020</p>
                         </div>
                     </div>
                     <div class="col-xl-6 col-sm-6 col-6 text-sm-left">
@@ -57,28 +57,14 @@
                     <div class="col-xl-9">
                         <div class="about_content">
                             <div class="our_vision">
-                                <h3>OUR VISION</h3>
-                                <p>The growth of virtual items and microtransactions have been enormous over the last
-                                    few years. The prices for these items or microtransactions are often twice the price
-                                    of the game itself. We understand people want these
-                                    exclusive in-game rewards, but we also see how they are too expensive for many.
-                                    Therefore we came up with the idea, Treemium .
+                                <h3>NOTRE VISION
+                                </h3>
+                                <p>La croissance des objets virtuels et des microtransactions a été énorme au cours des dernières années. Les prix de ces articles ou microtransactions sont souvent le double du prix du jeu lui-même. Nous comprenons que les gens veulent ces récompenses exclusives dans le jeu, mais nous voyons aussi à quel point elles sont trop chères pour beaucoup. C'est pourquoi nous avons eu l'idée, CryptobanK .
                                 </p>
-                                <p>We started providing a service directly targeted towards the game Counter-Strike:
-                                    Global Offensive, however, we quickly came to realize this had the potential to
-                                    reach a much broader audience. Now we have expanded our service
-                                    for not only gamers, but also others that want gift cards to shop at their favorite
-                                    place, Treemium ocurrencies to start their Treemium o adventure, or just direct PayPal cash
-                                    to spend on whatever you want.</p>
-                                <p>We’re excited for what the future has to bring, and we will continuously be pushing
-                                    out updates and new features to keep Treemium  the leading platform in the GPT
-                                    industry
+                                <p>Nous avons commencé à fournir un service directement ciblé sur le jeu Counter-Strike: Global Offensive, mais nous avons rapidement réalisé que cela avait le potentiel d'atteindre un public beaucoup plus large. Maintenant, nous avons étendu notre service non seulement aux joueurs, mais aussi à d'autres qui souhaitent acheter des cartes-cadeaux dans leur lieu préféré, des devises Treemium pour commencer leur aventure CryptobanK , ou simplement envoyer de l'argent PayPal à dépenser pour ce que vous voulez.</p>
+                                <p>Nous sommes enthousiasmés par ce que l'avenir nous réserve, et nous proposerons en permanence des mises à jour et de nouvelles fonctionnalités pour que CryptobanK reste la plate-forme leader de l'industrie GPT.
                                 </p>
-                                <p>The growth of virtual items and microtransactions have been enormous over the last
-                                    few years. The prices for these items or microtransactions are often twice the price
-                                    of the game itself. We understand people want these
-                                    exclusive in-game rewards, but we also see how they are too expensive for many.
-                                    Therefore we came up with the idea, Treemium .
+                                <p>The growth of virtual items and microtransactions have been enormous over the last few years. The prices for these items or microtransactions are often twice the price of the game itself. We understand people want these exclusive in-game rewards, but we also see how they are too expensive for many. Therefore we came up with the idea, CryptobanK .
                                 </p>
                             </div>
                         </div>
@@ -92,10 +78,10 @@
                 <div class="row">
                     <div class="col-xl-6 col-md-6">
                         <div class="footer-link text-left">
-                            <a href="#" class="m_logo"><img src="images/logo.png" alt=""></a>
-                            <a href="about.html">About</a>
-                            <a href="privacy-policy.html">Privacy Policy</a>
-                            <a href="term-condition.html">Term & Service</a>
+                            <a href="#" class="m_logo"><img src="/builder/images/logo.png" alt=""></a>
+                            <a href="{{ path('about') }}">About</a>
+                            <a href="{{ path('privacy') }}">Privacy Policy</a>
+                            <a href="{{ path('condition') }}">Term & Service</a>
                         </div>
                     </div>
                     <div class="col-xl-6 col-md-6 text-lg-right text-center">

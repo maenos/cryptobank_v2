@@ -1,0 +1,53 @@
+{% extends 'base.html.twi' %}
+
+{% block title %}Log in!{% endblock %}
+{% block css %}
+    {{ encore_entry_link_tags('admin') }}
+{% endblock %}
+{% block body %}
+
+<div class="login">
+    <img src="{{ asset('build/img/logo.png')}}" alt="" width="100px">
+<h2>Connection à L'administraton</h2>
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    
+    <h2>Please sign in</h2>
+  <div class="group">
+    <input type="text" value="{{ last_username }}" name="pseudo" id="inputEmail"  placeholder="useradmin" required autofocus>
+<i class="fas fa-user"></i>
+  </div>
+ 
+ <div class="group">
+    <input type="password" name="password" id="inputPassword" required>
+    <i class="fas fa-lock"></i>
+ </div>
+   
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+    {#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+    #}
+
+    <button  type="submit">
+   <i class="fas fa-share    "></i>
+     Acces
+    </button>
+</form>
+
+
+</div>
+{% endblock %}

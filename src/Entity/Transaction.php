@@ -62,10 +62,12 @@ class Transaction
      */
     private $date;
 
+
+
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="boolean")
      */
-    private $status;
+    private $Ispaid;
 
     public function getId(): ?int
     {
@@ -180,14 +182,16 @@ class Transaction
         return $this;
     }
 
-    public function getStatus(): ?string
+
+
+    public function getIspaid(): ?bool
     {
-        return $this->status;
+        return $this->Ispaid;
     }
 
-    public function setStatus(string $status): self
+    public function setIspaid(bool $Ispaid): self
     {
-        $this->status = $status;
+        $this->Ispaid = $Ispaid;
 
         return $this;
     }

@@ -81,7 +81,7 @@ class SellType extends AbstractType
             ])
             ->add('date', HiddenType::class)
 
-            ->add('status',HiddenType::class)
+
 
         ;
     }

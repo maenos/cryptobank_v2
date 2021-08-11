@@ -1,0 +1,142 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+{% block content %}
+    <main>
+
+        <div class="cards">
+            <div class="card-single">
+                <div >
+                    <h1>{{ produit }}</h1>
+                    <span>LES PRODUITS</span>
+                </div>
+                <div>
+                    <span class="las la-users"></span>
+                </div>
+            </div>
+            <div class="card-single">
+                <div>
+                    <h1>{{ order }}</h1>
+                    <span>LES COMMANDES</span>
+                </div>
+                <div>
+                    <span class="las la-users"></span>
+                </div>
+            </div>
+
+            <div class="card-single">
+                <div>
+                    <h1>54</h1>
+                    <span>Customers</span>
+                </div>
+                <div>
+                    <span class="las la-users"></span>
+                </div>
+            </div>
+            <div class="card-single">
+                <div>
+                    <h1>{{ num }}</h1>
+                    <span>CLIENTS</span>
+                </div>
+                <div>
+                    <span class="las la-users"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="recent-flex">
+            <div class="projects">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Commandes recents</h2>
+                        <button>See all <span class="las la-arrow-right"></span></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table width="100%">
+                                <thead>
+                                <tr>
+                                    <td>NOM du client</td>
+                                    <td>heure</td>
+                                    <td>stauts</td>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for orde in commande %}
+                                <tr>
+                                    <td>{{ orde.email }}</td>
+                                    <td>{{ orde.date | date('H:i:s') }}</td>
+                                    {% if orde.ispaid %}
+                                    <td><span class="status success"></span>
+                                        payé</td>
+                                </tr>
+                                    {% else %}
+
+                                        <td><span class="status pending"></span>
+                                            attente de paiement</td>
+                                        </tr>
+
+                                        {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <!--  <div class="customers">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>new customer</h2>
+                        <button>See all <span class="las la-arrow-right"></span></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="customer">
+                            <div class="info">
+                                <img src="{{ asset('build/img/profile.jpg') }}" alt="" width="40px" height="40px">
+                                <div>
+                                    <h4>lewisfdf</h4>
+                                    <small>CeO kjkkk</small>
+                                </div>
+                            </div>
+                            <div class="contact">
+                                <span class="las la-user-circle"></span>
+                                <span class="las la-comment"></span>
+                                <span class="las la-phone"></span>
+                            </div>
+                        </div>
+                        <div class="customer">
+                            <div class="info">
+                                <img src="{{ asset('build/img/profile.jpg') }}" alt="" width="40px" height="40px">
+                                <div>
+                                    <h4>lewisfdf</h4>
+                                    <small>CeO kjkkk</small>
+                                </div>
+                            </div>
+                            <div class="contact">
+                                <span class="las la-user-circle"></span>
+                                <span class="las la-comment"></span>
+                                <span class="las la-phone"></span>
+                            </div>
+                        </div>
+                        <div class="customer">
+                            <div class="info">
+                                <img src="{{ asset('build/img/profile.jpg') }}" alt="" width="40px" height="40px">
+                                <div>
+                                    <h4>lewisfdf</h4>
+                                    <small>CeO kjkkk</small>
+                                </div>
+                            </div>
+                            <div class="contact">
+                                <span class="las la-user-circle"></span>
+                                <span class="las la-comment"></span>
+                                <span class="las la-phone"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </main>
+{% endblock %}

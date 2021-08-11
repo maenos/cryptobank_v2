@@ -1,0 +1,50 @@
+.content-head {
+    width: 100% !important;
+    margin: 10px;
+
+    }
+.headerr{
+
+}
+.btn-block{
+display: flex;
+    justify-content: center;
+}
+.content-head h2{
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+.content-head .btn{
+ margin: 5px;
+}
+
+.btn{
+    background: #fff  !important;
+    color:  #1ca96b !important;
+    border: 1px solid #1ca96b;
+}
+.btn:hover,.btn:focus{
+    background: #1ca96b !important;
+    color: #fff !important;
+}
+.action-edit{
+    margin: 20px !important;
+}
+.content-panel{
+    display: block;
+    overflow-x: auto;
+}
+.sidebar-menu li:not(.submenu-active).active .menu-icon,.sidebar-menu li:not(.submenu-active).active a {
+    color: #00c853 !important;
+    filter: opacity(100%);
+}
+
+.datagrid-header-tools{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}

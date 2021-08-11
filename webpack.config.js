@@ -13,7 +13,16 @@ Encore
     .setPublicPath('/build')
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
-
+    .copyFiles(
+        {
+            from: './assets/admin/',
+            to:  './admin/[path][name].[ext]',
+            // if versioning is enabled, add the file hash too
+            //to: 'images/[path][name].[hash:8].[ext]',
+            // only copy files matching this pattern
+            //pattern: /\.(png|jpg|jpeg)$/
+        }
+    )
 
     /*
      * ENTRY CONFIG
@@ -26,9 +35,7 @@ Encore
      */
     .addEntry('script', './assets/scripts.js')
     .addEntry('style', './assets/styles/style.css')
-    .addEntry('btc', './assets/btc.js')
-    .addEntry('eth', './assets/eth.js')
-    .addEntry('ltc', './assets/ltc.js')
+
 
 
 

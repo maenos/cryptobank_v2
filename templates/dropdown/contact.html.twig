@@ -1,0 +1,156 @@
+{% extends'base.html.twig' %}
+{% block body %}
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar">
+
+                            <div class="header-search d-flex align-items-center">
+
+                            </div>
+
+
+                            <div class="dashboard_log">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile_log dropdown">
+                                        <div class="user" data-toggle="dropdown">
+                                            <span class="thumb"><i class="mdi mdi-account"></i></span>
+                                            <span class="name">{{ app.user.email }}</span>
+                                            <span class="arrow"><i class="la la-angle-down"></i></span>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="{{ path('actu') }}" class="dropdown-item">
+                                                <i class="mdi mdi-account"></i> actualité
+                                            </a>
+                                            <a href="{{ path('shit') }}" class="dropdown-item">
+                                                <i class="la la-book"></i> Shitcoin
+                                            </a>
+                                            <a href="{{ path('contact') }}" class="dropdown-item">
+                                                <i class="la la-cog"></i> contact
+                                            </a>
+
+                                            <a href="{{ path('logout') }}" class="dropdown-item logout">
+                                                <i class="la la-sign-out"></i> Déconnexion
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <a class="brand-logo" href="{{ path('user_page') }}">
+                <img src="/builder/images/logo.png" alt="">
+                <span>CRYPTOBANk </span></a>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="{{ path('user_page') }}">
+                            <span><i class="mdi mdi-view-dashboard"></i></span>
+                            <span class="nav-text">accueil</span>
+                        </a>
+                    </li>
+                    <li><a href="{{ path('exchange') }}">
+                            <span><i class="mdi mdi-repeat"></i></span>
+                            <span class="nav-text">Echange</span>
+                        </a>
+                    </li>
+                    <li><a href="{{ path('account') }}">
+                            <span><i class="mdi mdi-account"></i></span>
+                            <span class="nav-text">Historique</span>
+                        </a>
+                    </li>
+                    <li><a href="{{ path('setting') }}">
+                            <span><i class="mdi mdi-settings"></i></span>
+                            <span class="nav-text">Compte</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="social">
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </div>
+                <div class="copy_right">
+                    © 2020 Quixlab
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page_title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="page_title-content">
+                            <p>Welcome Back,
+                                <span> {{ app.user.username }}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header border-0">
+                                <h4 class="card-title">list de shitcoin</h4>
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="transaction-table">
+                                    <div class="table-responsive">
+                                        <table class="table mb-0 table-responsive-sm">
+                                            <tbody>
+                                            {% for coin in shitcoin %}
+                                                <tr>
+                                                    <td>  {{ coin.nom }}
+                                                    </td>
+
+                                                    <td>
+                                                        {{ coin.symbole }}
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-info" href="#">Payer</a>
+                                                    </td>
+
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/builder/vendor/jquery/jquery.min.js"></script>
+    <script src="/builder/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    {{encore_entry_script_tags('script')}}
+{% endblock %}
