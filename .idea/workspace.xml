@@ -20,35 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13987034-e781-4d84-b9ce-9b86c62ddf8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/build.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cryptobank_v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cryptobank_v2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210312150340.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210324232428.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210324232602.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserPageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Transaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/BuyType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BuyType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/SellType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SellType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cryptobank/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cryptobank/about.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cryptobank/condition.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cryptobank/condition.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cryptobank/landing.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cryptobank/landing.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cryptobank/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cryptobank/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cryptobank/privacy.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cryptobank/privacy.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cryptobank/reset.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cryptobank/reset.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_page/compte.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/compte.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_page/exchange.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/exchange.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_page/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_page/repair.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page/repair.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,6 +246,8 @@
       <workItem from="1626136131756" duration="3960000" />
       <workItem from="1626740197472" duration="419000" />
       <workItem from="1628644424228" duration="961000" />
+      <workItem from="1628645578693" duration="1541000" />
+      <workItem from="1628809262108" duration="79000" />
     </task>
     <servers />
   </component>
